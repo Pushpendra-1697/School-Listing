@@ -7,9 +7,8 @@ const multer = require('multer');
 const upload = multer({ dest: 'schoolImages' });
 schoolRouter.post('/upload', upload.single('image'), (req, res) => {
     const file = req.file;
-    res.json({ msg: 'Image uploaded successfully', file });
+    res.status(200).json({ msg: 'Image uploaded successfully', file });
 });
-
 
 // **************** end points: "/school/store" for storinging any new school ****************
 schoolRouter.post('/store', async (req, res) => {
@@ -17,15 +16,21 @@ schoolRouter.post('/store', async (req, res) => {
     try {
         const school = new SchoolModel(payload);
         await school.save();
-        res.send({ msg: "School added Successfully in DB" });
+        res.status(201).send({ msg: "School added Successfully in DB" });
     } catch (e) {
-        res.send({ msg: e.message });
+        res.status(404).send({ msg: e.message });
     }
 });
 
 // **************** end points: "/school/get" for getting any available schools ****************
 schoolRouter.get('/get', async (req, res) => {
-    res.send('get router')
+    const query = req.query;
+    try {
+        const schools = await SchoolModel.find(query);
+        res.status(200).send(schools);
+    } catch (e) {
+        res.status(404).send({ msg: e.message });
+    }
 });
 
 
