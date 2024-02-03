@@ -30,7 +30,7 @@ const AddForm = ({ BACKEND_BASE_URL }) => {
         } else {
             setIsPhone(false);
         }
-        if (formData.email.includes('@gmail.com') === false) {
+        if (formData.email.includes('@') === false) {
             setIsEmail(true);
             return;
         } else {
