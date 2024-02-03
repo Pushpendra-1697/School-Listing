@@ -3,8 +3,8 @@ const { Schema, model } = require("mongoose");
 // **************** School Schema / blueprint with school collection ****************
 const schoolSchema = new Schema(
     {
-        name: String,
-        image: String,
+        name: { type: String, required: true },
+        image: { type: String, required: true },
         address: String,
         city: String,
         state: String,
