@@ -14,7 +14,7 @@ const page = () => {
   async function getSchoolsData() {
     try {
       setIsLoading(true);
-      let res = await fetch(`http://localhost:8000/school/get`);
+      let res = await fetch(`https://school-listing-server.onrender.com/school/get`);
       res = await res.json();
       setSchoolsData(res);
       setIsLoading(false);
