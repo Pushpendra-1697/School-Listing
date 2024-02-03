@@ -99,6 +99,13 @@ Clone the Repository from GitHub. Then do the following steps:
     npm run dev
 ```
 
+## Form Validation
+### For Phone No Field
+Should be 10 digit
+
+### For Email Field
+should contain '@'
+
 # Some Screenshots for different screens
 ![Screenshot (472)](https://github.com/Pushpendra-1697/School-Listing/assets/104748364/21b9c29e-87ac-407c-9b8b-50162c80c6b6)
 ![Screenshot (473)](https://github.com/Pushpendra-1697/School-Listing/assets/104748364/bed651ec-a553-46fe-834d-e58cf408394a)
